@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-ink;
+  }
+}
+
+@layer components {
+  /* Auto-growing textarea with warm feel */
+  .field-textarea {
+    @apply w-full bg-warm-bg/50 rounded-lg px-4 py-3 text-ink
+           placeholder:text-ink-light
+           outline-none border border-transparent
+           transition-colors duration-200;
+  }
+
+  .field-textarea:focus {
+    @apply border-warm-border bg-white;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply bg-sage text-white font-sans font-medium
+           px-6 py-3 rounded-lg
+           transition-all duration-200
+           hover:bg-sage-dark
+           active:scale-[0.98];
+  }
+
+  /* Ghost/text button */
+  .btn-ghost {
+    @apply text-ink-muted font-sans font-medium
+           px-4 py-2 rounded-lg
+           transition-colors duration-200
+           hover:text-ink hover:bg-warm-bg/50;
+  }
+
+  /* Card container */
+  .card {
+    @apply bg-surface-card border border-warm-border rounded-xl p-6;
+  }
+}
